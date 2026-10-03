@@ -1,0 +1,10 @@
+data/*
+outputs/
+mlruns/
+*.gguf
+__pycache__/
+.venv/
+kaggle_upload/
+*_results.zip
+.pytest_cache/
+!data/gate_slice.jsonl

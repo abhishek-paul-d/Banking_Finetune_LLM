@@ -1,0 +1,73 @@
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+[W1002 12:09:11.927303398 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3
+world_size=2 per_device_batch=4 accum=2 -> effective batch 16
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+train=64 val=1000 dropped_too_long=0
+compute dtype: torch.float16
+train=64 val=1000 dropped_too_long=0
+compute dtype: torch.float16
+
+
+
+
+loaded Qwen/Qwen3.5-4B via AutoModelForImageTextToText: Qwen3_5ForConditionalGeneration
+extra text-only inputs: ['mm_token_type_ids']
+loaded Qwen/Qwen3.5-4B via AutoModelForImageTextToText: Qwen3_5ForConditionalGeneration
+extra text-only inputs: ['mm_token_type_ids']
+trainable params: 15,237,120 || all params: 4,554,502,656 || trainable%: 0.3346
+trainable params: 15,237,120 || all params: 4,554,502,656 || trainable%: 0.3346
+[W1002 12:10:38.652625837 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3
+[W1002 12:10:38.653545496 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3
+2026/10/02 12:10:44 INFO mlflow.store.db.utils: Creating initial MLflow database tables...
+2026/10/02 12:10:44 INFO mlflow.store.db.utils: Updating database tables
+2026/10/02 12:10:46 INFO mlflow.tracking.fluent: Experiment with name 'banking-triage-full' does not exist. Creating a new experiment.
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+[W1002 12:26:55.989992250 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3
+world_size=2 per_device_batch=4 accum=2 -> effective batch 16
+train=64 val=1000 dropped_too_long=0
+compute dtype: torch.float16
+train=64 val=1000 dropped_too_long=0
+compute dtype: torch.float16
+
+
+extra text-only inputs: ['mm_token_type_ids']
+
+loaded Qwen/Qwen3.5-4B via AutoModelForImageTextToText: Qwen3_5ForConditionalGeneration
+extra text-only inputs: ['mm_token_type_ids']
+trainable params: 15,237,120 || all params: 4,554,502,656 || trainable%: 0.3346
+[W1002 12:27:29.445900893 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3
+trainable params: 15,237,120 || all params: 4,554,502,656 || trainable%: 0.3346
+[W1002 12:27:29.750141940 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+{'eval_loss': '0.8779', 'eval_runtime': '111.3', 'eval_samples_per_second': '8.981', 'eval_steps_per_second': '1.123', 'epoch': '1'}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{'eval_loss': '0.8779', 'eval_runtime': '83.86', 'eval_samples_per_second': '11.92', 'eval_steps_per_second': '1.491', 'epoch': '2'}
+{'train_runtime': '280.2', 'train_samples_per_second': '0.457', 'train_steps_per_second': '0.029', 'train_loss': '0.8179', 'epoch': '2'}
+{'eval_loss': '0.8779', 'eval_runtime': '83.51', 'eval_samples_per_second': '11.97', 'eval_steps_per_second': '1.497', 'epoch': '2'}
+{
+  "name": "qwen3_5_4b_full",
+  "base_model": "Qwen/Qwen3.5-4B",
+  "train_examples": 64,
+  "dropped_too_long": 0,
+  "trainable_params": 15237120,
+  "train_seconds": 282.2,
+  "peak_vram_gb": 5.29,
+  "final_val_loss": 0.877859890460968,
+  "world_size": 2,
+  "effective_batch": 16
+}
+[rank0]:[W1002 12:33:39.736773856 ProcessGroupNCCL.cpp:1553] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())

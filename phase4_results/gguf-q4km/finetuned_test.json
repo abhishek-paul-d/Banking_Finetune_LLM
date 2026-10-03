@@ -1,0 +1,14 @@
+{
+  "n": 3080,
+  "json_valid_rate": 1.0,
+  "intent_accuracy": 0.9357142857142857,
+  "intent_macro_f1": 0.9361504300630464,
+  "invented_label_rate": 0.0012987012987012987,
+  "urgency_accuracy": 0.9801948051948052,
+  "needs_human_accuracy": 0.9899350649350649,
+  "wall_seconds": 686.3,
+  "examples_per_s": 4.49,
+  "concurrency": 32,
+  "tag": "gguf-q4km",
+  "name": "banking"
+}

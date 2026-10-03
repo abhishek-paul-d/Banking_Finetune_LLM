@@ -1,0 +1,1 @@
+{"name": "gguf-q8", "engine": "llama", "weights_gib": null, "load_seconds": 21.0, "gpu_used_mib_peak": 10096, "gpu_used_mib_idle_before": 0}

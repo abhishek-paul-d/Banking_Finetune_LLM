@@ -1,0 +1,14 @@
+{
+  "n": 3080,
+  "json_valid_rate": 1.0,
+  "intent_accuracy": 0.9331168831168831,
+  "intent_macro_f1": 0.9332661026616522,
+  "invented_label_rate": 0.0012987012987012987,
+  "urgency_accuracy": 0.9798701298701299,
+  "needs_human_accuracy": 0.9902597402597403,
+  "wall_seconds": 126.0,
+  "examples_per_s": 24.44,
+  "concurrency": 32,
+  "tag": "awq-mlp-only",
+  "name": "banking"
+}

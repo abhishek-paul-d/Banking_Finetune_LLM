@@ -1,0 +1,1 @@
+{"name": "fp16", "engine": "vllm", "weights_gib": 7.99, "load_seconds": 384.2, "gpu_used_mib_peak": 14548, "gpu_used_mib_idle_before": 0}

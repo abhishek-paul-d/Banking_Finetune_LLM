@@ -1,0 +1,26 @@
+# Shared by BOTH pilot models. Only the model-specific file may differ in
+# base_model / name / lora.target_regex, so the comparison stays fair.
+train_file: data/pilot_train.jsonl
+val_file: data/pilot_val.jsonl
+load_in_4bit: true
+max_length: 384          # prompt ~95 tokens + completion ~25; rows over this are dropped and counted
+
+epochs: 3
+# effective batch = 4 x 4 = 16 (same for both models). Gemma's 262k-token vocab makes the logits huge;
+# 8 x 2 ran out of memory on a 15 GB T4.
+per_device_train_batch_size: 4
+gradient_accumulation_steps: 4
+per_device_eval_batch_size: 4
+learning_rate: 2.0e-4
+warmup_ratio: 0.05
+lr_scheduler_type: cosine
+logging_steps: 10
+seed: 42
+
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+
+mlflow_experiment: banking-triage-pilot
+mlflow_tracking_uri: sqlite:///mlflow.db   # file store (./mlruns) is rejected by recent MLflow

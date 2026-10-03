@@ -1,0 +1,6 @@
+# AWQ W4A16, ONLY the MLP layers quantized (all attention kept in fp16).
+name: phase3_awq_mlp_only
+base_model: artifacts/awq-mlp-only
+output_dir: outputs/phase3/awq_mlp_only
+load_in_4bit: false
+decompress_compressed_tensors: true

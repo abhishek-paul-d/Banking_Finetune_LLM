@@ -1,0 +1,7 @@
+extends: configs/pilot/base.yaml
+name: qwen3_5_4b
+base_model: Qwen/Qwen3.5-4B
+output_dir: outputs/pilot/qwen3_5_4b
+lora:
+  # all linear layers of the text decoder (attention, Gated-DeltaNet, MLP); vision tower excluded
+  target_regex: '.*language_model.*\.(q_proj|k_proj|v_proj|o_proj|in_proj_qkv|in_proj_z|out_proj|gate_proj|up_proj|down_proj)'

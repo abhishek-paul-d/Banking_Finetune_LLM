@@ -1,0 +1,20 @@
+# CI gate thresholds, evaluated on the fixed 200-example slice data/gate_slice.jsonl (class-balanced, 77 intents).
+#
+# How they were set (Phase 4 predictions of the Q4_K_M GGUF on this exact slice, all variants scored 0.955-0.96 intent acc):
+#   intent accuracy  measured 0.960, standard error on 200 examples ~0.014 -> floor 0.90 (about 4 standard errors below)
+#   macro-F1         measured 0.955 (noisier: ~2.6 examples per class)      -> floor 0.89
+#   JSON validity    measured 1.000                                          -> floor 0.99 (at most 2 broken outputs)
+#   urgency / needs_human  measured 0.99-1.00 (rule-derived from intent)     -> floor 0.96
+#   invented labels  measured 0-0.5%                                         -> ceiling 2%
+#
+# What the gate is for: it catches a BROKEN model (bad quantization, wrong or corrupt file, template or tokenizer
+# mismatch, un-tuned base model). It cannot see a 0.5-point drift: that is far below the noise of 200 examples.
+# Fine-grained quality differences are measured on the full 3,080-example test set (Phase 3 table).
+min:
+  json_valid_rate: 0.99
+  intent_accuracy: 0.90
+  intent_macro_f1: 0.89
+  urgency_accuracy: 0.96
+  needs_human_accuracy: 0.96
+max:
+  invented_label_rate: 0.02

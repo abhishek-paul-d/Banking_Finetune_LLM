@@ -1,0 +1,14 @@
+{
+  "n": 3080,
+  "json_valid_rate": 1.0,
+  "intent_accuracy": 0.9373376623376624,
+  "intent_macro_f1": 0.9375396777230537,
+  "invented_label_rate": 0.0006493506493506494,
+  "urgency_accuracy": 0.9831168831168832,
+  "needs_human_accuracy": 0.9912337662337662,
+  "wall_seconds": 163.9,
+  "examples_per_s": 18.79,
+  "concurrency": 32,
+  "tag": "fp16",
+  "name": "banking"
+}

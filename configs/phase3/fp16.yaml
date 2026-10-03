@@ -1,0 +1,5 @@
+# Merged fp16 model (adapter folded in). Reference for every quantized variant.
+name: phase3_fp16
+base_model: artifacts/merged-fp16
+output_dir: outputs/phase3/fp16
+load_in_4bit: false

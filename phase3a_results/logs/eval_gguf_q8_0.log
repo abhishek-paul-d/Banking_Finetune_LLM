@@ -1,0 +1,17 @@
+{
+  "n": 3080,
+  "json_valid_rate": 1.0,
+  "intent_accuracy": 0.9383116883116883,
+  "intent_macro_f1": 0.9385442240207593,
+  "invented_label_rate": 0.0006493506493506494,
+  "urgency_accuracy": 0.9834415584415584,
+  "needs_human_accuracy": 0.9912337662337662,
+  "wall_seconds": 1011.2,
+  "examples_per_s": 3.05,
+  "concurrency": 8,
+  "tag": "gguf_q8_0",
+  "name": "banking"
+}
+EXAMPLE: exchange_charge | {"intent": "exchange_charge", "urgency": "low", "needs_human": false}
+EXAMPLE: receiving_money | {"intent": "receiving_money", "urgency": "low", "needs_human": false}
+EXAMPLE: passcode_forgotten | {"intent": "passcode_forgotten", "urgency": "low", "needs_human": false}

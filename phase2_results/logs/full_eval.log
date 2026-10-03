@@ -1,0 +1,43 @@
+compute dtype: torch.float16
+
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `causal_conv1d_update` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+loaded Qwen/Qwen3.5-4B via AutoModelForImageTextToText: Qwen3_5ForConditionalGeneration
+16/3080
+176/3080
+336/3080
+496/3080
+656/3080
+816/3080
+976/3080
+1136/3080
+1296/3080
+1456/3080
+1616/3080
+1776/3080
+1936/3080
+2096/3080
+2256/3080
+2416/3080
+2576/3080
+2736/3080
+2896/3080
+3056/3080
+{
+  "n": 3080,
+  "json_valid_rate": 1.0,
+  "intent_accuracy": 0.9392857142857143,
+  "intent_macro_f1": 0.9397979296449684,
+  "invented_label_rate": 0.0012987012987012987,
+  "urgency_accuracy": 0.9827922077922078,
+  "needs_human_accuracy": 0.9918831168831169,
+  "tag": "finetuned_test",
+  "name": "qwen3_5_4b_full",
+  "wall_seconds": 1025.1,
+  "gen_tokens_per_s": 69.0,
+  "examples_per_s": 3.0,
+  "peak_vram_gb": 4.53
+}
+EXAMPLE: exchange_charge | {"intent": "exchange_charge", "urgency": "low", "needs_human": false}
+EXAMPLE: receiving_money | {"intent": "receiving_money", "urgency": "low", "needs_human": false}
+EXAMPLE: passcode_forgotten | {"intent": "passcode_forgotten", "urgency": "low", "needs_human": false}

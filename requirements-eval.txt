@@ -1,0 +1,8 @@
+datasets
+pandas
+scikit-learn
+requests
+pyyaml
+mlflow
+httpx
+locust

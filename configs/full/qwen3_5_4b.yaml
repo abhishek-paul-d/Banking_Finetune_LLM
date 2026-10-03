@@ -1,0 +1,14 @@
+# Phase 2: full fine-tune of the pilot winner. Same recipe as the pilot except data and epochs.
+extends: configs/pilot/qwen3_5_4b.yaml
+name: qwen3_5_4b_full
+train_file: data/train.jsonl      # 9,003 examples
+val_file: data/val.jsonl          # 1,000 examples
+output_dir: outputs/full/qwen3_5_4b
+epochs: 2                         # ~4.5x more data than the pilot, so fewer passes
+save_steps: 200                   # checkpoint every 200 steps so a disconnect doesn't lose the run
+disable_tqdm: true                # print a log line every logging_steps instead of a progress bar
+logging_steps: 20
+mlflow_experiment: banking-triage-full
+lora:
+  r: 8          # pilot used 16; 8 is plenty for one narrow classification-style task
+  alpha: 16     # keeps alpha/r = 2, same scaling as the pilot

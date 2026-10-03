@@ -1,0 +1,7 @@
+extends: configs/pilot/base.yaml
+name: gemma4_e4b
+base_model: google/gemma-4-E4B-it
+output_dir: outputs/pilot/gemma4_e4b
+lora:
+  # all linear layers of the text decoder; vision/audio towers excluded
+  target_regex: '.*language_model.*\.(q_proj|k_proj|v_proj|o_proj|gate_proj|up_proj|down_proj)'

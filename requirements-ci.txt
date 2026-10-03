@@ -1,0 +1,10 @@
+pytest
+requests
+scikit-learn
+pyyaml
+transformers>=5
+huggingface_hub
+jinja2
+fastapi
+httpx
+pydantic>=2

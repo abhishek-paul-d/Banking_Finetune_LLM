@@ -1,0 +1,1 @@
+{"name": "gguf-q4km", "engine": "llama", "weights_gib": null, "load_seconds": 12.0, "gpu_used_mib_peak": 8404, "gpu_used_mib_idle_before": 0}

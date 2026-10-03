@@ -1,0 +1,27 @@
+services:
+  vllm:
+    image: vllm/vllm-openai:latest
+    command: >
+      --model /models/${MODEL_DIR:-merged-awq}
+      --served-model-name banking-triage
+      --quantization ${QUANT:-awq}
+      --max-model-len 1024
+      --gpu-memory-utilization 0.85
+    volumes:
+      - ./outputs:/models:ro
+    ports: ["8000:8000"]
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+
+  api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.api
+    environment:
+      VLLM_URL: http://vllm:8000
+      MODEL_NAME: banking-triage
+    ports: ["8080:8080"]
+    depends_on: [vllm]

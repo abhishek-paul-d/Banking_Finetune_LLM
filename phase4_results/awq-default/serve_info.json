@@ -1,0 +1,1 @@
+{"name": "awq-default", "engine": "vllm", "weights_gib": 4.48, "load_seconds": 240.1, "gpu_used_mib_peak": 14542, "gpu_used_mib_idle_before": 0}

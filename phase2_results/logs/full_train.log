@@ -1,0 +1,98 @@
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+[W1002 12:33:43.253765443 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3
+world_size=2 per_device_batch=4 accum=2 -> effective batch 16
+train=9003 val=1000 dropped_too_long=0
+compute dtype: torch.float16
+train=9003 val=1000 dropped_too_long=0
+compute dtype: torch.float16
+
+loaded Qwen/Qwen3.5-4B via AutoModelForImageTextToText: Qwen3_5ForConditionalGeneration
+extra text-only inputs: ['mm_token_type_ids']
+
+loaded Qwen/Qwen3.5-4B via AutoModelForImageTextToText: Qwen3_5ForConditionalGeneration
+extra text-only inputs: ['mm_token_type_ids']
+trainable params: 15,237,120 || all params: 4,554,502,656 || trainable%: 0.3346
+[W1002 12:34:17.353657802 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3
+trainable params: 15,237,120 || all params: 4,554,502,656 || trainable%: 0.3346
+[W1002 12:34:17.665987226 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+{'loss': '0.7789', 'grad_norm': '1.28', 'learning_rate': '3.86e-05', 'epoch': '0.03552'}
+{'loss': '0.3797', 'grad_norm': '1.701', 'learning_rate': '0.0001088', 'epoch': '0.07105'}
+{'loss': '0.1794', 'grad_norm': '1.148', 'learning_rate': '0.0001789', 'epoch': '0.1066'}
+{'loss': '0.094', 'grad_norm': '0.654', 'learning_rate': '0.0001999', 'epoch': '0.1421'}
+{'loss': '0.07089', 'grad_norm': '0.9836', 'learning_rate': '0.0001995', 'epoch': '0.1776'}
+{'loss': '0.04377', 'grad_norm': '0.5458', 'learning_rate': '0.0001987', 'epoch': '0.2131'}
+{'loss': '0.04583', 'grad_norm': '1.135', 'learning_rate': '0.0001976', 'epoch': '0.2487'}
+{'loss': '0.0393', 'grad_norm': '0.6284', 'learning_rate': '0.0001962', 'epoch': '0.2842'}
+{'loss': '0.03747', 'grad_norm': '0.4884', 'learning_rate': '0.0001944', 'epoch': '0.3197'}
+{'loss': '0.02747', 'grad_norm': '1.147', 'learning_rate': '0.0001923', 'epoch': '0.3552'}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{'loss': '0.02555', 'grad_norm': '0.3209', 'learning_rate': '0.0001899', 'epoch': '0.3908'}
+{'loss': '0.02753', 'grad_norm': '0.4161', 'learning_rate': '0.0001872', 'epoch': '0.4263'}
+{'loss': '0.02671', 'grad_norm': '0.4933', 'learning_rate': '0.0001842', 'epoch': '0.4618'}
+{'loss': '0.02458', 'grad_norm': '0.5627', 'learning_rate': '0.0001809', 'epoch': '0.4973'}
+{'loss': '0.02472', 'grad_norm': '0.1669', 'learning_rate': '0.0001773', 'epoch': '0.5329'}
+{'loss': '0.02276', 'grad_norm': '0.2329', 'learning_rate': '0.0001734', 'epoch': '0.5684'}
+{'loss': '0.02235', 'grad_norm': '0.5168', 'learning_rate': '0.0001693', 'epoch': '0.6039'}
+{'loss': '0.0231', 'grad_norm': '0.4013', 'learning_rate': '0.0001649', 'epoch': '0.6394'}
+{'loss': '0.01434', 'grad_norm': '0.2518', 'learning_rate': '0.0001604', 'epoch': '0.675'}
+{'loss': '0.0178', 'grad_norm': '0.4556', 'learning_rate': '0.0001556', 'epoch': '0.7105'}
+{'loss': '0.01675', 'grad_norm': '0.2968', 'learning_rate': '0.0001506', 'epoch': '0.746'}
+{'loss': '0.01631', 'grad_norm': '0.4259', 'learning_rate': '0.0001454', 'epoch': '0.7815'}
+{'loss': '0.02421', 'grad_norm': '0.2605', 'learning_rate': '0.0001401', 'epoch': '0.8171'}
+{'loss': '0.02485', 'grad_norm': '0.3779', 'learning_rate': '0.0001347', 'epoch': '0.8526'}
+{'loss': '0.01933', 'grad_norm': '0.4499', 'learning_rate': '0.0001291', 'epoch': '0.8881'}
+{'loss': '0.01934', 'grad_norm': '0.3143', 'learning_rate': '0.0001234', 'epoch': '0.9236'}
+{'loss': '0.01471', 'grad_norm': '0.4064', 'learning_rate': '0.0001177', 'epoch': '0.9591'}
+{'loss': '0.01244', 'grad_norm': '0.1434', 'learning_rate': '0.0001119', 'epoch': '0.9947'}
+{'eval_loss': '0.01511', 'eval_runtime': '84.27', 'eval_samples_per_second': '11.87', 'eval_steps_per_second': '1.483', 'epoch': '1'}
+{'loss': '0.009032', 'grad_norm': '0.1901', 'learning_rate': '0.000106', 'epoch': '1.03'}
+{'loss': '0.008086', 'grad_norm': '0.1909', 'learning_rate': '0.0001001', 'epoch': '1.066'}
+{'loss': '0.007155', 'grad_norm': '0.3392', 'learning_rate': '9.427e-05', 'epoch': '1.101'}
+{'loss': '0.005829', 'grad_norm': '0.2731', 'learning_rate': '8.842e-05', 'epoch': '1.137'}
+{'loss': '0.008369', 'grad_norm': '0.04725', 'learning_rate': '8.26e-05', 'epoch': '1.172'}
+{'loss': '0.008523', 'grad_norm': '0.08526', 'learning_rate': '7.685e-05', 'epoch': '1.208'}
+{'loss': '0.0106', 'grad_norm': '0.2071', 'learning_rate': '7.117e-05', 'epoch': '1.243'}
+{'loss': '0.009871', 'grad_norm': '0.3236', 'learning_rate': '6.56e-05', 'epoch': '1.279'}
+{'loss': '0.009282', 'grad_norm': '0.2179', 'learning_rate': '6.014e-05', 'epoch': '1.314'}
+{'loss': '0.008164', 'grad_norm': '0.2978', 'learning_rate': '5.482e-05', 'epoch': '1.35'}
+{'loss': '0.007295', 'grad_norm': '0.1593', 'learning_rate': '4.966e-05', 'epoch': '1.385'}
+{'loss': '0.007545', 'grad_norm': '0.0579', 'learning_rate': '4.467e-05', 'epoch': '1.421'}
+{'loss': '0.008756', 'grad_norm': '0.2109', 'learning_rate': '3.987e-05', 'epoch': '1.456'}
+{'loss': '0.005012', 'grad_norm': '0.122', 'learning_rate': '3.528e-05', 'epoch': '1.492'}
+{'loss': '0.005526', 'grad_norm': '0.1072', 'learning_rate': '3.092e-05', 'epoch': '1.528'}
+{'loss': '0.007264', 'grad_norm': '0.3899', 'learning_rate': '2.679e-05', 'epoch': '1.563'}
+{'loss': '0.009283', 'grad_norm': '0.3552', 'learning_rate': '2.291e-05', 'epoch': '1.599'}
+{'loss': '0.007068', 'grad_norm': '0.1265', 'learning_rate': '1.931e-05', 'epoch': '1.634'}
+{'loss': '0.007382', 'grad_norm': '0.3038', 'learning_rate': '1.598e-05', 'epoch': '1.67'}
+{'loss': '0.005365', 'grad_norm': '0.2585', 'learning_rate': '1.294e-05', 'epoch': '1.705'}
+{'loss': '0.004133', 'grad_norm': '0.07472', 'learning_rate': '1.02e-05', 'epoch': '1.741'}
+{'loss': '0.006281', 'grad_norm': '0.2789', 'learning_rate': '7.767e-06', 'epoch': '1.776'}
+{'loss': '0.005242', 'grad_norm': '1.441', 'learning_rate': '5.657e-06', 'epoch': '1.812'}
+{'loss': '0.007471', 'grad_norm': '0.02494', 'learning_rate': '3.872e-06', 'epoch': '1.847'}
+{'loss': '0.005152', 'grad_norm': '0.3264', 'learning_rate': '2.419e-06', 'epoch': '1.883'}
+{'loss': '0.004801', 'grad_norm': '0.1459', 'learning_rate': '1.303e-06', 'epoch': '1.918'}
+{'loss': '0.005323', 'grad_norm': '0.2834', 'learning_rate': '5.285e-07', 'epoch': '1.954'}
+{'loss': '0.008587', 'grad_norm': '0.233', 'learning_rate': '9.715e-08', 'epoch': '1.989'}
+{'eval_loss': '0.01135', 'eval_runtime': '83.5', 'eval_samples_per_second': '11.98', 'eval_steps_per_second': '1.497', 'epoch': '2'}
+{'train_runtime': '6346', 'train_samples_per_second': '2.837', 'train_steps_per_second': '0.177', 'train_loss': '0.04044', 'epoch': '2'}
+{'eval_loss': '0.01135', 'eval_runtime': '83.31', 'eval_samples_per_second': '12', 'eval_steps_per_second': '1.5', 'epoch': '2'}
+{
+  "name": "qwen3_5_4b_full",
+  "base_model": "Qwen/Qwen3.5-4B",
+  "train_examples": 9003,
+  "dropped_too_long": 0,
+  "trainable_params": 15237120,
+  "train_seconds": 6348.2,
+  "peak_vram_gb": 5.9,
+  "final_val_loss": 0.011353136040270329,
+  "world_size": 2,
+  "effective_batch": 16
+}
+[rank0]:[W1002 14:21:33.469821974 ProcessGroupNCCL.cpp:1553] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())

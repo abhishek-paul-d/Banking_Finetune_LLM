@@ -1,0 +1,1 @@
+{"name": "awq-mlp-only", "engine": "vllm", "weights_gib": 4.9, "load_seconds": 243.1, "gpu_used_mib_peak": 14554, "gpu_used_mib_idle_before": 0}

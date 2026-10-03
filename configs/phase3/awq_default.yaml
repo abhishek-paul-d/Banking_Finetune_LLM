@@ -1,0 +1,6 @@
+# AWQ W4A16, linear_attn kept in fp16 (mirrors Red Hat's official Qwen3.5 recipe).
+name: phase3_awq_default
+base_model: artifacts/awq-default
+output_dir: outputs/phase3/awq_default
+load_in_4bit: false
+decompress_compressed_tensors: true
