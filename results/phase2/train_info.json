@@ -1,0 +1,12 @@
+{
+  "name": "qwen3_5_4b_full",
+  "base_model": "Qwen/Qwen3.5-4B",
+  "train_examples": 9003,
+  "dropped_too_long": 0,
+  "trainable_params": 15237120,
+  "train_seconds": 6348.2,
+  "peak_vram_gb": 5.9,
+  "final_val_loss": 0.011353136040270329,
+  "world_size": 2,
+  "effective_batch": 16
+}

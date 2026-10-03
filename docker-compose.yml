@@ -1,14 +1,20 @@
+# Needs an NVIDIA GPU with 16 GB+ and the NVIDIA container toolkit.
+# Download one model folder from the Hugging Face repo into ./models first, e.g.
+#   huggingface-cli download Abhishek-255/banking-triage-qwen3_5_4b-quantized --include "awq-default/*" --local-dir models
+# then:  MODEL_DIR=awq-default docker compose up     (or MODEL_DIR=merged-fp16)
+# NOT yet tested end to end with the current model layout; the flags mirror the Phase 4 benchmark runs.
 services:
   vllm:
-    image: vllm/vllm-openai:latest
+    image: vllm/vllm-openai:v0.30.0
     command: >
-      --model /models/${MODEL_DIR:-merged-awq}
+      --model /models/${MODEL_DIR:-awq-default}
       --served-model-name banking-triage
-      --quantization ${QUANT:-awq}
+      --dtype float16
+      --language-model-only
       --max-model-len 1024
       --gpu-memory-utilization 0.85
     volumes:
-      - ./outputs:/models:ro
+      - ./models:/models:ro
     ports: ["8000:8000"]
     deploy:
       resources:

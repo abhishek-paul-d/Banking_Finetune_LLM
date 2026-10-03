@@ -95,26 +95,17 @@ Built (local parts verified; the GitHub run is the last step):
 - `.github/workflows/eval-gate.yml`: unit tests -> CPU llama.cpp (cached) -> eval on the slice -> gate -> publish gateway image to GHCR only if everything passed.
 - Gateway (`src/serve/app.py`) now sends the same thinking-off prompt as training via `/v1/completions`.
 
-**Done when:** a deliberately degraded model fails the gate in CI. Run the workflow manually (Actions > Run workflow) with
+**DONE (green run: fine-tuned Q4_K_M passes; red run: un-tuned base fails 5 of 6 checks).** To repeat, run the workflow manually (Actions > Run workflow) with
 repo `unsloth/Qwen3.5-4B-GGUF`, file `Qwen3.5-4B-Q4_K_M.gguf` (the un-tuned base) and keep the red run; then a normal run (green).
 
 ---
 
 ## Phase 6: Packaging
 
-- Fill in the README results table and add an architecture diagram.
-- Upload the model and GGUF to the Hugging Face Hub.
-- Short write-up: what was compared, what won, what the numbers say.
+Done:
+- `README.md`: results table (quality, size, latency, throughput, cost), findings, pipeline diagram, run instructions, limitations.
+- `docs/FINDINGS.md` (full write-up), `docs/MODEL_CARD.md` (copy to the Hugging Face repo as `README.md`).
+- `results/`: every table and CSV behind the numbers; `scripts/cost.py` regenerates the cost table (GPU price $0.156/h = 1.56 Colab units/h at $9.99 per 100 units).
+- Cleanup: stale notebooks and `loadtest/bench.py` removed; `docker-compose.yml` updated.
 
----
-
-## Open decisions
-
-1. ~~Models~~ decided: Qwen3.5-4B vs Gemma-4-E4B. Pilot size: 2,002 (26/intent).
-3. Hosted API to use as the cost/quality baseline.
-
-## Known caveats
-
-- `urgency` and `needs_human` are rule-based labels derived from intent, not human annotations.
-- Nothing has been run on a GPU yet; library versions (TRL, AutoAWQ, vLLM) may need adjustment.
-- Colab cannot host a permanent service; the published proof is the benchmark table, the repo, and the CI gate.
+Still open (needs the user): upload `docs/MODEL_CARD.md` to the HF repo; optional hosted-API price row; optional second seed for the model comparison; end-to-end test of gateway + docker-compose.
