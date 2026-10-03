@@ -1,0 +1,98 @@
+[
+  {
+    "split": "train",
+    "n": 9003,
+    "n_intents": 77,
+    "min_per_intent": 34,
+    "max_per_intent": 171,
+    "urgency": {
+      "low": 5126,
+      "medium": 2948,
+      "high": 929
+    },
+    "needs_human": {
+      "False": 7364,
+      "True": 1639
+    }
+  },
+  {
+    "split": "val",
+    "n": 1000,
+    "n_intents": 77,
+    "min_per_intent": 1,
+    "max_per_intent": 23,
+    "urgency": {
+      "low": 564,
+      "medium": 330,
+      "high": 106
+    },
+    "needs_human": {
+      "False": 814,
+      "True": 186
+    }
+  },
+  {
+    "split": "test",
+    "n": 3080,
+    "n_intents": 77,
+    "min_per_intent": 40,
+    "max_per_intent": 40,
+    "urgency": {
+      "low": 1840,
+      "medium": 920,
+      "high": 320
+    },
+    "needs_human": {
+      "False": 2560,
+      "True": 520
+    }
+  },
+  {
+    "split": "pilot_train",
+    "n": 2002,
+    "n_intents": 77,
+    "min_per_intent": 26,
+    "max_per_intent": 26,
+    "urgency": {
+      "low": 1196,
+      "medium": 598,
+      "high": 208
+    },
+    "needs_human": {
+      "False": 1664,
+      "True": 338
+    }
+  },
+  {
+    "split": "pilot_val",
+    "n": 385,
+    "n_intents": 77,
+    "min_per_intent": 5,
+    "max_per_intent": 5,
+    "urgency": {
+      "medium": 115,
+      "low": 230,
+      "high": 40
+    },
+    "needs_human": {
+      "True": 65,
+      "False": 320
+    }
+  },
+  {
+    "split": "test_small",
+    "n": 770,
+    "n_intents": 77,
+    "min_per_intent": 10,
+    "max_per_intent": 10,
+    "urgency": {
+      "low": 460,
+      "medium": 230,
+      "high": 80
+    },
+    "needs_human": {
+      "False": 640,
+      "True": 130
+    }
+  }
+]

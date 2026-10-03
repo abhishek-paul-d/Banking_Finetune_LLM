@@ -1,0 +1,5 @@
+# Same recipe as gemma4_e4b.yaml; only the training seed (and output folder) changes. Data split is unchanged.
+extends: configs/pilot/gemma4_e4b.yaml
+name: gemma4_e4b_seed1
+output_dir: outputs/pilot/gemma4_e4b_seed1
+seed: 1

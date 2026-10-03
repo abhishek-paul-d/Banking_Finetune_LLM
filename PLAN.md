@@ -108,4 +108,14 @@ Done:
 - `results/`: every table and CSV behind the numbers; `scripts/cost.py` regenerates the cost table (GPU price $0.156/h = 1.56 Colab units/h at $9.99 per 100 units).
 - Cleanup: stale notebooks and `loadtest/bench.py` removed; `docker-compose.yml` updated.
 
-Still open (needs the user): upload `docs/MODEL_CARD.md` to the HF repo; optional hosted-API price row; optional second seed for the model comparison; end-to-end test of gateway + docker-compose.
+Still open (needs the user): upload `docs/MODEL_CARD.md` to the HF repo; optional hosted-API price row; end-to-end test of gateway + docker-compose.
+
+---
+
+## Phase 1b: second seed for the pilot comparison (decision rule fixed before running)
+
+Repeat the pilot for both models with training seed 1 (`configs/pilot/*_seed1.yaml`, notebook `phase1b_pilot_seed1_kaggle.ipynb`); data and every other setting unchanged.
+`src/eval/seed_summary.py` applies: **tie confirmed** if in both seeds |macro-F1 diff| < 1 point or its paired-bootstrap CI includes 0; **a model ahead** if the CI excludes 0 in the same direction in both seeds
+(then the model choice is reopened); otherwise **mixed**, reported as a tie. Qwen stays the production model unless Gemma is clearly ahead in both seeds.
+
+**Result (done):** tie confirmed. Qwen minus Gemma macro-F1 = +0.0025 (seed 0) and -0.0042 (seed 1), both CIs include 0; Qwen stays on memory and inference speed. See `results/pilot/seed_summary.md`.

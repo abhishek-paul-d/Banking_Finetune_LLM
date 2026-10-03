@@ -23,8 +23,21 @@ Qwen3.5-4B and Gemma-4-E4B were fine-tuned identically on a 2,000-example pilot 
 | eval tokens/s | 68 | 58 |
 
 The quality difference was +0.25 points (95% paired-bootstrap CI -0.55 to +1.15): **a tie**. The pre-registered rule said to prefer the faster/smaller model; Qwen3.5-4B
-uses less than half the memory and generates faster, so it won. Gemma trained faster in this setup, so "faster" here means inference speed and memory. The plan said to rerun with a second
-seed when close; **that was not done**. The choice is a defensible tie-break, not a proven superiority.
+uses less than half the memory and generates faster, so it won. Gemma trained faster in this setup, so "faster" here means inference speed and memory.
+
+**Second seed (Phase 1b)** [`results/pilot/seed_summary.md`, `results/pilot/comparison_seed1.md`]. Both pilots were repeated with training seed 1; data and all other settings were identical.
+
+| model | seed 0 acc / macro-F1 | seed 1 acc / macro-F1 | mean macro-F1 |
+|---|---|---|---|
+| Qwen3.5-4B | 0.8981 / 0.9029 | 0.9016 / 0.9045 | 0.9037 |
+| Gemma-4-E4B | 0.8964 / 0.9004 | 0.9039 / 0.9087 | 0.9045 |
+
+Qwen minus Gemma, macro-F1: **+0.0025 in seed 0** (CI -0.0055 to +0.0115) and **-0.0042 in seed 1** (CI -0.0122 to +0.0037). Both are ties, the sign flips, and the mean is -0.0008.
+By the rule fixed beforehand, **the tie is confirmed**. Two further observations: the same model changed its answer on about 7% of test examples between seeds, and Gemma's own macro-F1 moved by 0.8 points between seeds,
+more than the whole gap seen in seed 0. So the seed-0 gap was noise, and a single-seed comparison at this scale could have "found" either model ahead.
+The practical differences are stable across both seeds: Qwen used 5.8 GB (train) and 4.6 GB (eval) against Gemma's 12.4 GB and 10.0 GB, and generated 71 vs 60 tokens/s;
+Gemma trained about 1.9 times faster (2,203 s vs 4,123 s). The choice of Qwen therefore rests on memory and inference speed, which matter for a served model, and not on quality.
+Limitation: two seeds are still a small sample, and only Qwen was carried through full fine-tuning, quantization and serving, so how Gemma would have behaved in those phases is unmeasured.
 
 ## 3. The fine-tune (Phase 2) [`results/phase2/`]
 
@@ -103,5 +116,5 @@ The gate detects broken models, not subtle regressions (noise of about 1.4 point
 
 ## 8. What would make this stronger
 
-A second seed for the model comparison; a hosted-API cost baseline; constrained decoding to one of the 77 labels (would remove the 0.1% invented labels); testing on messier real-world text;
+A hosted-API cost baseline; constrained decoding to one of the 77 labels (would remove the 0.1% invented labels); testing on messier real-world text;
 running the gateway under load with a real client mix; and a cloud GPU price in place of the Colab-based one.

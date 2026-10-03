@@ -41,7 +41,7 @@ The fp16 file includes an unused vision tower (0.67 GB); the GGUF files are text
    A plain-attention control model (Qwen3-4B) scaled 5 to 6x under identical settings. This is consistent with Qwen3.5's hybrid Gated-DeltaNet layers being handled less efficiently by llama.cpp; we did not profile the layers directly. See `results/phase4/tuning_summary.csv`.
 6. **AWQ files are bigger than you might expect** (5.4 GB vs 2.7 GB for Q4_K_M) because the new `linear_attn` layers, embeddings and vision tower stay in 16-bit.
 
-More detail, caveats and the model-selection story are in [`docs/FINDINGS.md`](docs/FINDINGS.md).
+More detail, caveats and the model-selection story are in [`docs/FINDINGS.md`](docs/FINDINGS.md). New to this? Read [`docs/PROJECT_EXPLAINED.md`](docs/PROJECT_EXPLAINED.md) (plain-language walkthrough) and [`docs/DECISIONS.md`](docs/DECISIONS.md) (every decision and why).
 
 ## Pipeline
 
@@ -121,7 +121,7 @@ It cannot see a 0.5-point drift; that is far below the noise of 200 examples (ab
 
 ## Limitations (read before trusting the numbers)
 
-- **One model, one dataset, one seed.** The pilot comparison of Qwen3.5-4B and Gemma-4-E4B was a statistical tie on quality (difference +0.25 points, 95% CI -0.55 to +1.15); Qwen was chosen on speed and memory. The planned second-seed rerun was not done.
+- **One model family, one dataset, two pilot seeds.** The pilot comparison of Qwen3.5-4B and Gemma-4-E4B was a statistical tie on quality in both seeds (macro-F1 difference +0.25 points in seed 0, -0.42 in seed 1; the sign flipped, which is what noise looks like). Qwen was chosen on speed and memory, not quality. Two seeds is still a small sample, and the full fine-tune and everything after it used Qwen only.
 - **Banking77 is clean and small-domain.** Real support traffic is messier; several intent labels overlap in meaning, which caps attainable accuracy. `urgency` and `needs_human` are rule-derived, not learned judgments.
 - **One GPU, short requests.** Throughput and cost are for an L4 with about 80-token prompts and 23-token answers. Longer prompts change the picture. Costs assume 100% utilization at the best load level and a Colab-based price, not a cloud quote.
 - **llama.cpp results are for llama.cpp as it handles Qwen3.5 today** (untuned beyond the tests above); newer builds may behave differently.
